@@ -7,14 +7,20 @@ export default class CitySearchPage extends Component {
     }
 
     handleChange = (event) => {
-        console.log(event.target.value);
-        
+        this.setState({
+            country: event.target.value
+        })
+    }
+
+    handleSubmit = () => {
+        console.log('hello')
     }
     render() {
+        console.log(this.state.country)
         return (
             <div className="search-page">
                 <h1>Choose a City</h1>
-                <SearchBar handleChange={this.handleChange} country = {this.state.country}/>
+                <SearchBar handleChange={this.handleChange} country={this.state.country} handleSubmit={this.handleSubmit}/>
             </div>
         )
     }
