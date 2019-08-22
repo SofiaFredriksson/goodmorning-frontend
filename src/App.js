@@ -1,17 +1,48 @@
-import React from 'react';
+import React, { Component } from 'react'
 import Nav from './containers/Nav'
 import CitySearchPage from './containers/CitySearchPage'
-
+import WeatherCard from './components/WeatherCard'
 import './App.css';
 
-function App() {
+export default class App extends Component {
+  state = {
+    page: 'home',
+    country: ''
+  }
+
+  handleSubmit = () => {
+    this.setState({
+      page: 'weather'
+    })
+  }
   
-  return (
-    <div className="App">
-      <Nav/>
-      <CitySearchPage/>
-    </div>
-  );
+  handleChange = (event) => {
+    this.setState({
+        country: event.target.value
+    })
 }
 
-export default App;
+  rednerSwitch = () => {
+    switch(this.state.page) {
+      case 'home':
+        return <CitySearchPage handleSubmit={this.handleSubmit} handleChange={this.handleChange}/>;
+      case 'weather':
+        return <WeatherCard/>;  
+      default:
+        return null;
+    }
+  }
+  render() {
+    console.log(this.state.page);
+    
+    return (
+      <div className="App">
+        <Nav/>
+        { this.rednerSwitch() }
+      </div>
+    );
+  }
+  
+}
+
+
