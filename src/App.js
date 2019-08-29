@@ -68,13 +68,6 @@ export default class App extends Component {
 
   }
 
-  // rand = (obj) => {
-  //   return Math.floor(Math.random() * obj.url.length)
-  // }
-  // chooseBackground = (pictures) => {
-  //   let obj = pictures.find(picture => picture.weather.includes(this.state.weather.description))
-  //   return obj.url[this.rand(obj)]
-  // }
 
   renderSwitch = () => {
     switch(this.state.page) {
