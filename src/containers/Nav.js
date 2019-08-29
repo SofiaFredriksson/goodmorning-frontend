@@ -3,11 +3,11 @@ import React, { Component } from 'react'
 export default class Nav extends Component {
     render() {
         return (
-            <div>
+            <div className="nav">
                 <ul>
-                    <li>Home</li>
-                    <li>My Cities</li>
-                    <li>Login</li>
+                    <li><b>Home</b></li>
+                    {/* <li>My Cities</li> */}
+                    <li><b>Login</b></li>
                 </ul>
             </div>
         )
