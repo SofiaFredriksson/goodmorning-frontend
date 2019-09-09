@@ -44,12 +44,15 @@ const weathers = [
 ]
 
 
+
 export default class App extends Component {
   state = {
     page: 'home',
     city: '',
     weather: {},
   }
+
+  
 
   handleSubmit = () => {
     this.setState({
